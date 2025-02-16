@@ -11,6 +11,14 @@
 
 - [x] отсутствие функционала
 
+## Архитектура
+
+Проект состоит из микросервисов, предназначенных для развёртывания в Docker:
+
+- [фронтенд](https://github.com/code-418-dpr/WhoCame-frontend)  
+- [бэкенд](https://github.com/code-418-dpr/WhoCame-backend)
+- [сервис распознавания лиц](https://github.com/code-418-dpr/WhoCame-cv)
+
 ## Стек
 
 ...
@@ -46,7 +54,8 @@ git clone https://github.com/code-418-dpr/WhoCame-cv.git services/cv
 
 0. Установите проект по инструкции выше.
 1. Создайте файл `.env` на основе [.env.template](.env.template) и настройте все описанные там параметры.
-2. Теперь запускать проект можно командой:
+2. Установите Docker.
+3. Теперь запускать проект можно командой:
 
 ```shell
 docker compose up

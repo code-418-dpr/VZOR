@@ -5,7 +5,7 @@
 [![downloads](https://img.shields.io/github/downloads/code-418-dpr/WhoCame/total)](https://github.com/code-418-dpr/WhoCame/releases)
 [![code size](https://img.shields.io/github/languages/code-size/code-418-dpr/WhoCame.svg)](https://github.com/code-418-dpr/WhoCame)
 
-Продвинутая система идентификации посетителей
+Продвинутая система отслеживания посещаемости на основе идентификации посетителей по лицам
 
 ## Особенности реализации
 

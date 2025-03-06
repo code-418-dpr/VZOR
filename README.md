@@ -5,7 +5,7 @@
 [![downloads](https://img.shields.io/github/downloads/code-418-dpr/VZOR/total)](https://github.com/code-418-dpr/VZOR/releases)
 [![code size](https://img.shields.io/github/languages/code-size/code-418-dpr/VZOR.svg)](https://github.com/code-418-dpr/VZOR)
 
-Масштабируемая система автоматического анализа изображений (обнаружение объектов и распознавание текста)
+Масштабируемая система интеллектуального анализа изображений
 
 ## Особенности реализации
 
@@ -17,6 +17,7 @@
 
 - [фронтенд](https://github.com/code-418-dpr/VZOR-frontend)  
 - [бэкенд](https://github.com/code-418-dpr/VZOR-backend)
+- [сервис CV](https://github.com/code-418-dpr/VZOR-cv)
 
 ## Стек
 
@@ -35,6 +36,7 @@
 ```shell
 git clone git@github.com:code-418-dpr/VZOR-frontend.git services/frontend
 git clone git@github.com:code-418-dpr/VZOR-backend.git services/backend
+git clone git@github.com:code-418-dpr/VZOR-cv.git services/cv
 ```
 
 или по HTTPS:
@@ -42,6 +44,7 @@ git clone git@github.com:code-418-dpr/VZOR-backend.git services/backend
 ```shell
 git clone https://github.com/code-418-dpr/VZOR-frontend.git services/frontend
 git clone https://github.com/code-418-dpr/VZOR-backend.git services/backend
+git clone https://github.com/code-418-dpr/VZOR-cv.git services/cv
 ```
 
 После этого вы можете вносить изменения в каждый из сервисов по-отдельности (в соответствии с инструкциями, описанными в

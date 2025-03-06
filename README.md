@@ -1,3 +1,5 @@
+<img src="https://github.com/user-attachments/assets/8d2099bb-ad1f-4891-ad39-fe3396adba21" alt="VZOR AI icon" width="15%" />
+
 # VZOR AI
 
 [![license](https://img.shields.io/github/license/code-418-dpr/VZOR)](https://opensource.org/licenses/MIT)

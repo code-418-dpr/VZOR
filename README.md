@@ -11,12 +11,7 @@
 
 ## Особенности реализации
 
-- [x] микросервисная архитектура
-- [x] единая среда развёртывания
-- [x] интегрирован CI/CD
-- [x] веб-приложение с поддержкой технологии PWA
-- [x] модульно-монолитный бэкенд на основе архитектуры clean architecture
-- [x] несколько нейросетей для работы с изображениями и текстом
+- [x] отсутствие функционала
 
 ## Архитектура
 
@@ -37,26 +32,21 @@
 1. Клонируйте репозитории сервисов, входящих в состав проекта по SSH (рекомендуется):
 
 ```shell
-git clone git@github.com:code-418-dpr/VZOR-frontend.git services/frontend
-git clone git@github.com:code-418-dpr/VZOR-backend.git services/backend
-git clone git@github.com:code-418-dpr/VZOR-cv.git services/cv
+git clone git@github.com:code-418-dpr/VZOR-frontend.git services/VZOR-frontend
+git clone git@github.com:code-418-dpr/VZOR-backend.git services/VZOR-backend
+git clone git@github.com:code-418-dpr/VZOR-cv.git services/VZOR-cv
 ```
 
 или по HTTPS:
 
 ```shell
-git clone https://github.com/code-418-dpr/VZOR-frontend.git services/frontend
-git clone https://github.com/code-418-dpr/VZOR-backend.git services/backend
-git clone https://github.com/code-418-dpr/VZOR-cv.git services/cv
+git clone https://github.com/code-418-dpr/VZOR-frontend.git services/VZOR-frontend
+git clone https://github.com/code-418-dpr/VZOR-backend.git services/VZOR-backend
+git clone https://github.com/code-418-dpr/VZOR-cv.git services/VZOR-cv
 ```
 
 После этого вы можете вносить изменения в каждый из сервисов по-отдельности (в соответствии с инструкциями, описанными в
 соответствующих README).
-
-2. Запустить проект можно командой
-```shell
-docker-compose up -d --build
-```
 
 ## Запуск
 

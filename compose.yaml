@@ -1,13 +1,11 @@
-﻿version: '3.8'
-
-services:
-  web:
-    image: web:0.1
+﻿services:
+  backend:
     build:
-      context: .
+      context: ./services/VZOR-backend
       dockerfile: src/VZOR.Web/Dockerfile
+    restart: unless-stopped
     environment:
-      - ASPNETCORE_ENVIRONMENT=Docker
+      ASPNETCORE_ENVIRONMENT: Docker
     ports:
       - "8080:8080"
     depends_on:
@@ -15,24 +13,41 @@ services:
       - minio
     networks:
       - vzor-network
-  
-  frontend:
-    image: frontend:0.1
+
+  cv:
     build:
-      context: .
+      context: ./services/VZOR-cv
       dockerfile: ./Dockerfile
+    restart: unless-stopped
     environment:
-      - FRONTEND_BACKEND_URL=http://localhost:8080/api
-      - FRONTEND_FRONTEND_SESSION_SECRET=zH4BtsG3t8zg4sRNtzzLLXNvteZluwz0
+      LOG_LEVEL: ${LOG_LEVEL}
+      GRPC_PORT: 50051
+      # - SEQ_URL=http://localhost:5431/
+    ports:
+      - "50051:50051"
+    depends_on:
+      - backend
+    networks:
+      - vzor-network
+
+  frontend:
+    build:
+      context: ./services/VZOR-frontend
+      dockerfile: ./Dockerfile
+    restart: unless-stopped
+    environment:
+      FRONTEND_BACKEND_URL: http://backend:8080/api
+      FRONTEND_FRONTEND_SESSION_SECRET: zH4BtsG3t8zg4sRNtzzLLXNvteZluwz0
     ports:
       - "3000:3000"
     depends_on:
-      - frontend
+      - backend
+    networks:
+      - vzor-network
 
   postgres:
-    container_name: postgres
-    image: postgres:17.4
-    restart: always
+    image: postgres:17-alpine
+    restart: unless-stopped
     environment:
       POSTGRES_DB: "vzor"
       POSTGRES_USER: "postgres"
@@ -54,9 +69,8 @@ services:
       - vzor-network
 
   seq:
-    image: datalust/seq:latest
-    container_name: seq
-    restart: always
+    image: datalust/seq:2024
+    restart: unless-stopped
     environment:
       - ACCEPT_EULA=Y
     ports:
@@ -67,7 +81,6 @@ services:
 
   redis:
     image: redis:8.0-M03-alpine3.21
-    container_name: redis
     environment:
       - REDIS_PASSWORD=12345
       - REDIS_USER=admin
@@ -81,8 +94,7 @@ services:
 
   mongodb:
     image: mongo:4.4.6
-    container_name: mongodb
-    restart: always
+    restart: unless-stopped
     environment:
       MONGO_INITDB_ROOT_USERNAME: "mongoadmin"
       MONGO_INITDB_ROOT_PASSWORD: "mongopassword"
@@ -92,31 +104,18 @@ services:
     networks:
       - vzor-network
 
-  rabbitmq:
-    image: rabbitmq:management-alpine
-    container_name: rabbitmq
-    hostname: rabbitmq
-    volumes:
-      - rabbitmq_data:/var/lib/rabbitmq
-    ports:
-      - "5672:5672"
-      - "15672:15672"
-    restart: always
-    networks:
-      - vzor-network
-
   minio:
-    container_name: minio
     image: minio/minio
     ports:
       - "9000:9000"
       - "9001:9001"
     environment:
-      - MINIO_SERVER_URL=http://minio:9000
+      - MINIO_ROOT_USER=minioadmin
+      - MINIO_ROOT_PASSWORD=minioadmin
     volumes:
       - minio-data:/data
     command: server --console-address ":9001" /data
-    restart: always
+    restart: unless-stopped
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:9000/minio/health/live" ]
       interval: 10s
@@ -124,27 +123,27 @@ services:
       retries: 3
     networks:
       - vzor-network
-
+        
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.10.0
-    container_name: elasticsearch
+    restart: unless-stopped
     environment:
       - discovery.type=single-node
       - ES_JAVA_OPTS=-Xms512m -Xmx512m
       - xpack.security.enabled=false
     volumes:
-      - elasticsearch_data:/usr/share/elasticsearch/data
+      - elasticsearch-data:/usr/share/elasticsearch/data
     ports:
       - "9200:9200"
     networks:
       - vzor-network
 
+
 volumes:
   postgres-data:
   redis-data:
   minio-data:
-  rabbitmq_data:
-  elasticsearch_data:
+  elasticsearch-data:
 
 networks:
   vzor-network:

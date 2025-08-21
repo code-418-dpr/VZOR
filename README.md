@@ -45,6 +45,12 @@
 - [фронтенд](https://github.com/code-418-dpr/VZOR-frontend)  
 - [бэкенд](https://github.com/code-418-dpr/VZOR-backend)
 - [сервис CV](https://github.com/code-418-dpr/VZOR-cv)
+- PostgreSQL — реляционная база данных
+- MongoDB — NoSQL база данных для хранения метаданных об изображениях
+- Redis — NoSQL база данных для кэширования
+- Minio — файловое S3-хранилище
+- Elasticsearch — движок полнотекстового поиска
+- Seq — сервис логирования
 
 ## Установка
 

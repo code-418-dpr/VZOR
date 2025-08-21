@@ -9,6 +9,31 @@
 
 Масштабируемая система интеллектуального анализа изображений
 
+<details>
+  <summary><h2>Демо</h2></summary>
+  <h3>Лендинг</h3>
+  <img width="70%" src="https://github.com/user-attachments/assets/55bd1d39-6fee-4d78-8da8-21291e82a012" />
+  <img width="70%" src="https://github.com/user-attachments/assets/8dae60a8-3676-4a3d-b6f2-c5ad7a977341" />
+  <img width="70%" src="https://github.com/user-attachments/assets/218ca60f-cdd8-4d33-8671-f32696cdb28d" />
+  <img width="70%" src="https://github.com/user-attachments/assets/a3530122-dfc2-45b6-8c2b-61206d741577" />
+  <h3>Вход и регистрация, светлая тема</h3>
+  <img width="70%" src="https://github.com/user-attachments/assets/77de44db-7856-4a04-8e02-8b32b4995cb4" />
+  <img width="70%" src="https://github.com/user-attachments/assets/316c2202-41ee-40bf-aa20-d4d4f39ce7b3" />
+  <h3>Основной функционал</h3>
+  <h4>Галерея и распознавание</h4>
+  <img width="70%" src="https://github.com/user-attachments/assets/ffe8d8e9-d355-42ff-843c-581fc80060f2" />
+  <img width="70%" src="https://github.com/user-attachments/assets/3211a2a6-889f-403a-a877-6337bf0cb741" />
+  <img width="70%" src="https://github.com/user-attachments/assets/4095e2a9-927d-41df-9dc8-6c66406862fd" />
+  <h4>Поиск с искажениями</h4>
+  <img width="70%" src="https://github.com/user-attachments/assets/4c1134b3-5d20-4cc5-8a3d-b461359bec75" />
+  <img width="70%" src="https://github.com/user-attachments/assets/51665e80-4493-4500-b7d9-08af5c2f0d77" />
+  <h4>Редактирование погрешностей работы нейросетей</h4>
+  <img width="70%" src="https://github.com/user-attachments/assets/2733e989-10f0-4952-a3ee-fb0bb37e6cdc" />
+  <h3>Функционал администратора системы</h3>
+  <h4>Блокировка пользователей</h4>
+  <img width="70%" src="https://github.com/user-attachments/assets/48d7f2a9-6285-4a41-8ff7-76b27f12a7af" />
+</details>
+
 ## Особенности реализации
 
 - [x] отсутствие функционала
